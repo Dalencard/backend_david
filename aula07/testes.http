@@ -1,0 +1,43 @@
+### Teste 1 - POST sem nome (espera 400)
+POST http://localhost:3000/pedras
+Content-Type: application/json
+
+{
+	"tipo": "Preciosa",
+	"valor": 1800
+}
+
+### Teste 2 - POST sem tipo (espera 400)
+POST http://localhost:3000/pedras
+Content-Type: application/json
+
+{
+	"nome": "Safira",
+	"valor": 2200
+}
+
+### Teste 3 - POST com valor invalido (espera 400)
+POST http://localhost:3000/pedras
+Content-Type: application/json
+
+{
+	"nome": "Ametista",
+	"tipo": "Semipreciosa",
+	"valor": -15
+}
+
+### Teste 4 - POST correto (espera 201)
+POST http://localhost:3000/pedras
+Content-Type: application/json
+
+{
+	"nome": "Diamante",
+	"tipo": "Preciosa",
+	"valor": 5000
+}
+
+### Teste 5 - buscar id inexistente (espera 404)
+GET http://localhost:3000/pedras/999
+
+### Teste 6 - buscar id existente (espera 200)
+GET http://localhost:3000/pedras
