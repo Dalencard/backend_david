@@ -1,0 +1,31 @@
+### Listar todas as pedras preciosas
+GET http://localhost:3000/pedras
+
+### Buscar pedra preciosa pelo id 1
+GET http://localhost:3000/pedras/1
+
+### Tentar buscar um id que nao existe
+GET http://localhost:3000/pedras/99
+
+### Cadastrar uma nova pedra preciosa
+POST http://localhost:3000/pedras
+Content-Type: application/json
+
+{
+	"nome": "Safira",
+	"tipo": "Preciosa",
+	"valor": 2800.00
+}
+
+### Atualizar a pedra preciosa de id 1
+PUT http://localhost:3000/pedras/1
+Content-Type: application/json
+
+{
+	"nome": "Rubi Estrela",
+	"tipo": "Preciosa",
+	"valor": 3000.00
+}
+
+### Deletar a pedra preciosa de id 3
+DELETE http://localhost:3000/pedras/3
